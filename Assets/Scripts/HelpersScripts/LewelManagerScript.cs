@@ -40,8 +40,17 @@ public class LewelManagerScript : MonoBehaviour
 
     void CreateNewGroup() 
     {
-        GameObject newEnemyGroup = Instantiate(enemyGroupOriginal);
-        newEnemyGroup.transform.position = startEnemyGroupPosition;
-        currentGroup = newEnemyGroup.GetComponent<FirstGroup>();
+        if (levelGroupTypes[groupCount] == GroupType.shooting)
+        {
+            GameObject newEnemyGroup = Instantiate(enemyGroupOriginal);
+            newEnemyGroup.transform.position = startEnemyGroupPosition;
+            currentGroup = newEnemyGroup.GetComponent<FirstGroup>();
+        }
+        else if (levelGroupTypes[groupCount] == GroupType.ram)
+        {
+            GameObject newEnemyGroup = Instantiate(ramGroupOriginal);
+            newEnemyGroup.transform.position = startEnemyGroupPosition;
+            currentGroup = newEnemyGroup.GetComponent<RamGroup>();
+        }
     }
 }

@@ -64,11 +64,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6181519852228515861, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 6181519852228515861, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6181519852228515861, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_LocalPosition.z
@@ -116,6 +116,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4614391571494393416}
     m_Modifications:
+    - target: {fileID: 300925129642035291, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5434204283916688400, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_Name
       value: RamShip (1)
@@ -126,11 +130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6181519852228515861, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: 1.6200001
       objectReference: {fileID: 0}
     - target: {fileID: 6181519852228515861, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6181519852228515861, guid: 17f8fa072bedbd441b65ef28a97ea763, type: 3}
       propertyPath: m_LocalPosition.z
