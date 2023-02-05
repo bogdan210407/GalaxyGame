@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpaceShip : MonoBehaviour
 {
-    private float speed = 0.2f;
+    private float speed = 0.07f;
     private float healf = 25;
     public GameObject playerBullet;
     public SpriteRenderer spriteRenderer;
@@ -13,14 +13,12 @@ public class SpaceShip : MonoBehaviour
 
 
 
-    void Start()
-    {
-        
-    }
+    
 
     void Update()
     {
         float halfWidth = spriteRenderer.bounds.size.x / 2;
+        float halfHeight = spriteRenderer.bounds.size.y / 2;
 
         bool keyDownMovePlayer = Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.A);
         if(keyDownMovePlayer == true)
@@ -51,6 +49,34 @@ public class SpaceShip : MonoBehaviour
                 transform.position = newPosition;
             }
         }
+        keyDownMovePlayer = Input.GetKey(KeyCode.UpArrow)||Input.GetKey(KeyCode.W);
+        if(keyDownMovePlayer == true)
+        {
+            Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + speed, 0);
+            Vector3 checjPositio = new Vector3(
+                newPosition.x,
+                newPosition.y + halfHeight,
+                0            
+            );
+            if(Helpers.IsPositionOnScreen(checjPositio))
+            {
+                transform.position = newPosition;
+            }
+        }
+        keyDownMovePlayer = Input.GetKey(KeyCode.DownArrow)||Input.GetKey(KeyCode.S);
+        if(keyDownMovePlayer == true)
+        {
+            Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - speed, 0);
+            Vector3 checjPositio = new Vector3(
+                newPosition.x,
+                newPosition.y - halfHeight,
+                0            
+            );
+            if(Helpers.IsPositionOnScreen(checjPositio))
+            {
+                transform.position = newPosition;
+            }
+        }
 
         keyDownMovePlayer = Input.GetKeyDown(KeyCode.Space);
         if(keyDownMovePlayer == true)
@@ -70,6 +96,15 @@ public class SpaceShip : MonoBehaviour
             Destroy(otherObject);
             if(healf <= 0)
             {
+                SceneManager.LoadSceneAsync(SceneIDS.loseSceneID);
+                Destroy(gameObject);
+            }
+        }else
+        {
+            RamShip ship = otherObject.GetComponent<RamShip>();
+            if(ship != null)
+            {
+                Destroy(otherObject);
                 SceneManager.LoadSceneAsync(SceneIDS.loseSceneID);
                 Destroy(gameObject);
             }

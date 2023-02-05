@@ -364,3 +364,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358a0cbfb562d94e943a0b234500c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 0
+  shipRenderer: {fileID: 7929476321688030078}

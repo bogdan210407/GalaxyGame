@@ -13,7 +13,7 @@ public class LewelManagerScript : MonoBehaviour
     Vector3 startEnemyGroupPosition = new Vector3(0, 3.15f, 0);
 
     private BaseGroup currentGroup;
-    private GroupType[] levelGroupTypes = {GroupType.ram};
+    private GroupType[] levelGroupTypes = {GroupType.shooting, GroupType.ram, GroupType.shooting};
     private int groupCount = 0;
 
     void Start()
